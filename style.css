@@ -1,0 +1,37 @@
+:root {
+    /* -- Colors -- */
+    --gray: #52545a;
+    --gray-dark: #1e1e1e;
+    --gray-light: #707174;
+    --gray-bg: #f0f1f5;
+    --blue: #25589D;
+    /* -- Area Colors -- */
+    --body-bg: var(--gray-bg);
+    /* -- Text Colors -- */
+    --body-text-color: var(--gray);
+    /* -- Menu Colors -- */
+    --main-menu-color: var(--gray-light);
+    --main-menu-color-hover: var(--blue);
+    /* -- Fonts -- */
+    --body-font: 'Nunito', sans-serif;
+}
+
+/* === GLOBAL === */
+body {font-size: clamp(16px, 1.25vw, 20px); font-family: var(--body-font); color: var(--body-text-color); margin: 0; overflow-x: hidden; overflow-y: scroll; background: var(--body-bg); -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+a, a:visited {color: currentcolor;}
+*, ::before, ::after {box-sizing: border-box;}
+
+/* === HEADER === */
+.header {padding: clamp(1.25rem, 2.25vw, 2.25rem) clamp(1.25rem, 5vw, 5rem);}
+/* --- Main Nav --- */
+.main-nav {display: flex; align-items: center; justify-content: space-between;}
+.main-menu-content {display: flex;}
+.main-menu-content a.main-menu-l1 {padding: 0.375rem clamp(0.75rem, 1.5vw, 1.5rem); text-decoration: none;}
+.menu-text {display: block; position: relative; overflow: hidden; text-decoration: none; text-transform: uppercase; font-size: 1rem; font-weight: 600; letter-spacing: 0.1vw;}
+.menu-text-default {color: var(--main-menu-color); display: block; transform: translateY(0); transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);}
+.main-menu-l1:hover .menu-text-default {opacity: 0; transform: translateY(-100%);}
+.menu-text-hover {color: var(--main-menu-color-hover); pointer-events: none; position: absolute; top: 0; left: 0; white-space: nowrap; opacity: 0; transform: translateY(100%); transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);}
+.main-menu-l1:hover .menu-text-hover {opacity: 1; transform: translateY(0);}
+/* -- Logo -- */
+a.header-logo {display: block; position: relative; z-index: 3; pointer-events: all; width: 14rem; line-height: 0;}
+a.header-logo svg {width: 100%; height: auto;}
